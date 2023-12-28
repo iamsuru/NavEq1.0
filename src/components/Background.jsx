@@ -3,12 +3,10 @@ import Navigation from './Navigation'
 import ChatBot from './ChatBot'
 import Header from './Header'
 import Footer from './Footer'
-
 function Background() {
   return (
-    <>
+    <div className='parent-container'>
       <Header />
-
       <div className='container'>
         <div className='row'>
           <div className='col-md-6 container container-part'>
@@ -19,9 +17,8 @@ function Background() {
           </div>
         </div>
       </div>
-
       <Footer />
-    </>
+    </div>
   )
 }
 

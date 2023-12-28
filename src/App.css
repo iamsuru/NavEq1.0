@@ -10,6 +10,14 @@
 
 /* Background.jsx */
 
+.parent-container {
+  background: url("/public/images/indexbg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .container-part {
   display: flex;
   justify-content: center;
@@ -111,7 +119,7 @@ input:hover {
 }
 
 /* ChatBot.jsx */
-.chatbot-container{
+.chatbot-container {
   width: 450px;
   height: 500px;
 }
