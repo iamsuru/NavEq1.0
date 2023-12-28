@@ -3,9 +3,9 @@ import { Nav } from 'reactstrap'
 
 function Header() {
   return (
-    <Nav className='container-fluid header'>
+    <nav className="navbar header">
       <h1 className='header-h1'>NavEq<sub className='header-sub'>for SRIT</sub></h1>
-    </Nav>
+    </nav>
   )
 }
 export default Header
