@@ -20,9 +20,8 @@
 }
 
 /* Header.jsx */
-header {
+.header{
   top: 0;
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
