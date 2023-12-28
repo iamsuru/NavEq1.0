@@ -129,3 +129,32 @@ iframe {
   border-radius: 10px;
   font-family: "DMSerifDisplay-Regular";
 }
+
+.map-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+}
+
+svg {
+  width: 1000px;
+  height: 690px;
+}
+
+@media screen and (max-width: 995px) {
+  svg {
+    width: 800px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .map-container{
+    transform: rotate(90deg) !important;
+    flex-direction: column;
+    width: 100vh;
+    height: 100vh;
+  }
+}
