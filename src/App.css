@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "RubikDoodleShadow-Regular";
+  src: url("/public/fonts/RubikDoodleShadow-Regular.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "DMSerifDisplay-Regular";
+  src: url("/public/fonts/DMSerifDisplay-Regular.ttf");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Background.jsx */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container-part {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Header.jsx */
+header {
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-h1 {
+  font-weight: 900;
+  font-size: 50px;
+  font-family: "RubikDoodleShadow-Regular", sans-serif;
+}
+
+.header-sub {
+  font-size: 18px;
+}
+
+/* Footer.jsx */
+footer {
+  color: white;
+  width: 100%;
+  padding: 5px 0;
+  position: fixed;
+  bottom: 0;
+  height: 5vh;
+  text-align: center;
+  font-family: "DMSerifDisplay-Regular";
+}
+
+/*Navigation.jsx*/
+.navigation-panel {
+  background: rgba(0, 0, 0, 0.45);
+  width: 450px;
+  height: 500px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "DMSerifDisplay-Regular";
+}
+
+button[type="submit"]:hover {
+  background-color: #008000;
+  border: 1px solid #008000;
+}
+
+.current-label,
+.destination-label {
+  font-size: 18px;
+  background-color: #fff;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+::placeholder {
+  font-size: 12px;
+  color: #000000e3;
+}
+
+::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  font-size: 12px;
+  color: #000000e3;
+}
+
+.current-label {
+  color: red;
+}
+
+.destination-label {
+  /* color: #198754; */
+  color: #008000;
+}
+
+i {
+  background-image: linear-gradient(to bottom, #ffc244, #cf462a);
+  -webkit-background-clip: text; /*For Safari/Chrome*/
+  background-clip: text;
+  color: transparent; /* Hide the text */
+  font-size: 26px;
+}
+
+i:hover,input:hover{
+  cursor: pointer;
+}
+
+/* ChatBot.jsx */
+
+iframe {
+  width: 450px;
+  height: 500px;
+  border-radius: 10px;
+  font-family: "DMSerifDisplay-Regular";
 }
