@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Locations from '../data/Locations'
 import { useNavigate } from 'react-router-dom';
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
+import SelectFromMap from './maps/SelectFromMap';
 
 function Navigation() {
     const navigate = useNavigate();
@@ -10,6 +12,9 @@ function Navigation() {
 
     const currentLocationRef = useRef(null);
     const destinationLocationRef = useRef(null);
+
+    const [modal, setModal] = useState(false);
+    const showModal = () => setModal(!modal);
 
 
     const gfloor = ["Room G01", "Room G02", "Room G03", "Room G04", "Room G05", "WaterFilter", "Room G06", "Girls Washroom", "Room G07", "Room G08", "Room G09", "Room G10", "Room G11", "Room G12", "Room G13", "HOD ME", "Room G15", "Room G18", "Boys Washroom", "Room G19", "Room G20", "Room G21", "Room G22", "Room G23", "Room G24", "Second College", "Auditorium", "Fountain", "HOD CE", "Room G25", "Room G26", "Room G27", "Room G28", "Room G29", "Girls Washroom", "HOD IT", "Room G30", "Room G31", "Room G32", "Room G33", "Room G34", "Room G35", "WaterFilter", "Boys Washroom", "Room G36", "Room G37", "Room G38", "Room G39", "Room G40", "Room G41", "Room G42"];
@@ -56,7 +61,10 @@ function Navigation() {
                         placeholder='Choose Room Number/Location'
                         onChange={function (e) { setCurrentLocation(e.target.value) }}
                     />
-                    <i className="fa-solid fa-location-dot icon ms-3"></i>
+                    <i
+                        className="fa-solid fa-location-dot icon ms-3"
+                        onClick={showModal}>
+                    </i>
                     <datalist id="from">
                         <option value="Entry Exit">Enterance OR Exit of College</option>
                         {Locations.map((location, key) => (
@@ -77,7 +85,10 @@ function Navigation() {
                         className='form-select mt-3 mb-3'
                         placeholder='Choose Room Number/Location'
                         onChange={function (e) { setDestinationLocation(e.target.value) }} />
-                    <i className="fa-solid fa-location-dot icon ms-3"></i>
+                    <i
+                        className="fa-solid fa-location-dot icon ms-3"
+                        onClick={showModal}>
+                    </i>
                     <datalist id="to">
                         <option value="Entry Exit">Enterance OR Exit of College</option>
                         {Locations.map((location, key) => (
@@ -87,6 +98,12 @@ function Navigation() {
                 </div>
                 <button type="submit" className="btn btn-warning mt-3">Find Path</button>
             </form>
+            <Modal centered isOpen={modal} toggle={showModal} size="xl" className="fullscreen-modal">
+                <ModalHeader toggle={showModal}></ModalHeader>
+                <ModalBody>
+                    <SelectFromMap />
+                </ModalBody>
+            </Modal>
         </div>
     )
 }

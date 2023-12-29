@@ -5,7 +5,7 @@ import Background from './components/Background';
 import { Route, Routes } from 'react-router-dom';
 import GroundFloorMap from './components/maps/GroundFloorMap';
 import FirstFloorMap from './components/maps/FirstFloorMap';
-import BothMaps from './components/maps/BothMaps';
+import SelectFromMap from './components/maps/SelectFromMap';
 function App() {
   return (
     <>
@@ -13,7 +13,7 @@ function App() {
         <Route path='/' element={<Background />} />
         <Route path='/ground-floor-map' element={<GroundFloorMap />} />
         <Route path='/first-floor-map' element={<FirstFloorMap />} />
-        <Route path='/combined-map' element={<BothMaps />} />
+        <Route path='/maps' element={<SelectFromMap />} />
       </Routes>
     </>
   )

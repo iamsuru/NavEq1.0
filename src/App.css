@@ -101,7 +101,6 @@ button[type="submit"]:hover {
 }
 
 .destination-label {
-  /* color: #198754; */
   color: #008000;
 }
 
@@ -130,57 +129,7 @@ iframe {
   font-family: "DMSerifDisplay-Regular";
 }
 
-/* .map-main-container{
-  height: 100vh;
-  flex-wrap: wrap;
-}
-
-.map-container{
-  background-color: #008000;
-  width: max-content;
-  height: max-content;
-}
-
-svg{
-  width: 1000px;
-  height: 100%;
-}
-
-
-@media screen and (max-width:999px){
-  svg{
-    width: 800px;
-  }
-}
-
-@media screen and (max-width:805px){
-  svg{
-    width: 700px;
-  }
-}
-
-@media screen and (max-width:700px){
-  svg{
-    width: 600px;
-  }
-}*/
-
-/* @media screen and (max-width:600px){
-  .map-container{
-    transform: rotate(90deg);
-    width: 100vh;
-    height: 100vw;
-  }
-} */
-
-/* @media screen and (max-width:375px){
-  svg{
-    width: 300px;
-  }
-} */
-
 .map-container {
-  /* background-color: #83e7739b; */
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -197,16 +146,27 @@ svg{
   align-items: center;
 }
 
-@media (max-width: 600px) {
-  .map-container {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
+.fullscreen-modal .modal-dialog {
+  max-width: 100%;
+}
 
+.touch-parent-container {
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.touch-container {
+  padding: 20px;
+  width: 740px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
   .svg-container {
-    /* box-sizing: border-box; Include padding and border in the element's total width and height */
     padding: 20px;
     width: fit-content;
     height: fit-content;
@@ -217,21 +177,39 @@ svg{
     transform: rotate(90deg); /* Rotate the container by 90 degrees */
     margin: auto; /* Center the container horizontally */
   }
-  svg{
+  svg {
     width: 500px;
+  }
+
+  .touch-container {
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    transform: rotate(90deg);
+    margin: auto;
+  }
+
+  .button-container {
+    transform-origin: center;
+    transform: rotate(90deg);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .change-button {
+    margin-right: 50px !important;
+    width: 110px !important;
   }
 }
 
 @media (max-width: 350px) {
-  .map-container {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
-
   .svg-container {
-    /* box-sizing: border-box; Include padding and border in the element's total width and height */
     padding: 20px;
     width: fit-content;
     height: fit-content;
@@ -242,7 +220,35 @@ svg{
     transform: rotate(90deg); /* Rotate the container by 90 degrees */
     margin: auto; /* Center the container horizontally */
   }
-  svg{
+  svg {
     width: 330px;
   }
+  .touch-container {
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    transform: rotate(90deg);
+    margin: auto;
+  }
+  .button-container {
+    transform-origin: center;
+    transform: rotate(90deg);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .change-button {
+    margin-right: 50px !important;
+    width: 110px !important;
+  }
+}
+
+.cursor-change {
+  cursor: pointer;
 }
