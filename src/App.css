@@ -130,31 +130,49 @@ iframe {
   font-family: "DMSerifDisplay-Regular";
 }
 
-.map-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
+.map-main-container{
   height: 100vh;
+  flex-wrap: wrap;
 }
 
-svg {
+.map-container{
+  background-color: #008000;
+  width: max-content;
+  height: max-content;
+}
+
+svg{
   width: 1000px;
-  height: 690px;
+  height: 100%;
 }
 
-@media screen and (max-width: 995px) {
-  svg {
+
+@media screen and (max-width:999px){
+  svg{
     width: 800px;
-    height: 500px;
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width:805px){
+  svg{
+    width: 700px;
+  }
+}
+
+@media screen and (max-width:700px){
+  svg{
+    width: 600px;
+  }
+}
+
+@media screen and (max-width:600px){
   .map-container{
-    transform: rotate(90deg) !important;
-    flex-direction: column;
-    width: 100vh;
-    height: 100vh;
+    transform: rotate(90deg);
+  }
+}
+
+@media screen and (max-width:375px){
+  svg{
+    width: 300px;
   }
 }
