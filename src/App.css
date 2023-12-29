@@ -130,7 +130,7 @@ iframe {
   font-family: "DMSerifDisplay-Regular";
 }
 
-.map-main-container{
+/* .map-main-container{
   height: 100vh;
   flex-wrap: wrap;
 }
@@ -163,16 +163,17 @@ svg{
   svg{
     width: 600px;
   }
-}
+}*/
 
 @media screen and (max-width:600px){
   .map-container{
     transform: rotate(90deg);
+    width: 500px;
   }
 }
 
-@media screen and (max-width:375px){
+/* @media screen and (max-width:375px){
   svg{
     width: 300px;
   }
-}
+} */
