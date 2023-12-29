@@ -70,7 +70,7 @@ function GroundFloorMap() {
             "Room 131p": { "Room 130p": 1, "Room 132p": 1 },
             "Room 132p": { "Room 131p": 1, "Room 133p": 1 },
             "Boys WashRoom2fp": { "Room 132p": 1 },
-            "Room 132p": { "Room 131p": 1, "To Stairs4fp": 1 },
+            // "Room 132p": { "Room 131p": 1, "To Stairs4fp": 1 },
             "Room 133bp": { "Vector1p": 1, "Room 133p": 1 },
             "Room 133p": { "Room 133bp": 1, "Room 133ap": 1, "To Stairs4fp": 1 },
             "Room 133ap": { "Room 133p": 1, "Room 134p": 1 },
