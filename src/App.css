@@ -180,6 +180,7 @@ svg{
 } */
 
 .map-container {
+  /* background-color: #83e7739b; */
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -242,6 +243,6 @@ svg{
     margin: auto; /* Center the container horizontally */
   }
   svg{
-    width: 250px;
+    width: 330px;
   }
 }
