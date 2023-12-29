@@ -3,7 +3,7 @@ import React from 'react'
 function GroundFloorMap() {
     return (
         <div className='container map-container'>
-            <div className='svg-container'>
+            <div className='container svg-container'>
                 <svg viewBox="0 0 1440 1019" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path id="HOD MEp" d="M78 201H102V336H78V201Z" fill="#3BC7BE" />
                     <path id="Room G15p" d="M105 334H77V379H105V334Z" fill="#3BC7BE" />
