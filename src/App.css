@@ -165,16 +165,33 @@ svg{
   }
 }*/
 
-@media screen and (max-width:600px){
+/* @media screen and (max-width:600px){
   .map-container{
     transform: rotate(90deg);
     width: 100vh;
-    background-color: #cf462a;
+    height: 100vw;
   }
-}
+} */
 
 /* @media screen and (max-width:375px){
   svg{
     width: 300px;
   }
 } */
+
+.map-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-container {
+  padding: 20px;
+  text-align: center;
+  width: 1000px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
