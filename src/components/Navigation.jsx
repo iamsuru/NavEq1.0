@@ -15,7 +15,7 @@ function Navigation() {
 
     const [modal, setModal] = useState(false);
     const showModal = () => setModal(!modal);
-    const closeModal= () => setModal(false);
+    const closeModal = () => setModal(false);
 
     const [modalFor, setModalFor] = useState('');
 
@@ -59,6 +59,10 @@ function Navigation() {
             navigate(`/first-floor-map?current=${currentLocation}&destination=${destinationLocation}`);
             return;
         } else {
+            if (ffloor.includes(currentLocation) && gfloor.includes(destinationLocation)) {
+                navigate(`/combined-maps?current=${currentLocation}&destination=${destinationLocation}&div1=none`);
+                return;
+            }
             navigate(`/combined-maps?current=${currentLocation}&destination=${destinationLocation}`);
             return;
         }
@@ -124,7 +128,7 @@ function Navigation() {
             <Modal centered isOpen={modal} toggle={showModal} size="xl" className="fullscreen-modal">
                 <ModalHeader toggle={showModal}></ModalHeader>
                 <ModalBody>
-                    <SelectFromMap modalFor={modalFor} closeModal={closeModal}/>
+                    <SelectFromMap modalFor={modalFor} closeModal={closeModal} />
                 </ModalBody>
             </Modal>
         </div>

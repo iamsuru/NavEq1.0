@@ -1,3 +1,7 @@
+#div2{
+  margin-top: 0;
+}
+
 @media (max-width: 600px) {
   .change-btn {
     transform: rotate(90deg);
@@ -6,8 +10,8 @@
     margin-left: 0px !important;
     margin-bottom: 0px !important;
   }
-  .combined-map-div {
+  .svg{
     transform: rotate(90deg);
-    margin-top: 100px;
+    margin-top: 200px;
   }
 }

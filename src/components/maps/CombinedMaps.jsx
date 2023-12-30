@@ -2,16 +2,16 @@ import React, { useEffect } from 'react'
 import FindShortestPath from '../../scripts/FindShortestPath';
 import '../../styles/CombinedMaps.css'
 function CombinedMaps() {
+
   function showFirstFloor() {
     var div1 = document.getElementById('div1')
     var div2 = document.getElementById('div2')
     var groundBtn = document.getElementById('groundBtn')
     var firstBtn = document.getElementById('firstBtn')
 
-    if (window.innerWidth >= 600) {
-      div1.style.width = "0px";
-      div2.style.width = "900px";
-    }
+    div1.style.display = "none"
+    div2.style.display = "flex"
+
     if (firstBtn) firstBtn.style.backgroundColor = "#198754"
     if (groundBtn) groundBtn.style.backgroundColor = "#6C757D";
   }
@@ -21,10 +21,10 @@ function CombinedMaps() {
     var div2 = document.getElementById('div2')
     var groundBtn = document.getElementById('groundBtn')
     var firstBtn = document.getElementById('firstBtn')
-    if (window.innerWidth >= 600) {
-      div1.style.width = "900px";
-      div2.style.width = "0px";
-    }
+
+    div1.style.display = "flex"
+    div2.style.display = "none"
+
     if (firstBtn) firstBtn.style.backgroundColor = "#6C757D"
     if (groundBtn) groundBtn.style.backgroundColor = "#198754";
   }
@@ -32,15 +32,24 @@ function CombinedMaps() {
     const params = new URLSearchParams(window.location.search);
     const currentLocation = params.get('current');
     const destinationLocation = params.get('destination');
+    var setDivVisible = params.get('div1')
     const currentElement = document.getElementById(currentLocation);
     const destinationElement = document.getElementById(destinationLocation);
-    var combindSVG1 = document.getElementById('combined-svg1')
-    var combindSVG2 = document.getElementById('combined-svg2')
-
-    if (window.innerWidth <= 600) {
-      combindSVG1.style.width = "600px"
-      combindSVG2.style.width = "600px"
+    var div1 = document.getElementById('div1')
+    var div2 = document.getElementById('div2')
+    var groundBtn = document.getElementById('groundBtn')
+    var firstBtn = document.getElementById('firstBtn')
+    if (setDivVisible === "none") {
+      div1.style.display = "none";
+      div2.style.display = "flex";
+      if (firstBtn) firstBtn.style.backgroundColor = "#198754"
+      if (groundBtn) groundBtn.style.backgroundColor = "#6C757D";
     }
+    else if (div2) {
+      div2.style.display = "none"
+    }
+
+
 
     if (currentElement) currentElement.style.fill = "#FC100D";
 
@@ -79,8 +88,8 @@ function CombinedMaps() {
         </div>
 
         <div className='row d-flex justify-content-center align-items-center vh-90'>
-          <div className='col-md-12 combined-map-div' style={{ width: '900px' }} id='div1'>
-            <svg id='combined-svg1' viewBox="0 0 1440 1019" fill="none" xmlns="http://www.w3.org/2000/svg"
+          <div className='col-md-12 combined-map-div' style={{ display: 'flex', width: '900px' }} id='div1'>
+            <svg className='svg' id='combined-svg1' viewBox="0 0 1440 1019" fill="none" xmlns="http://www.w3.org/2000/svg"
               xlinkHref="http://www.w3.org/1999/xlink">
               <path id="HOD MEp" d="M78 201H102V336H78V201Z" fill="#3BC7BE" />
               <path id="Room G15p" d="M105 334H77V379H105V334Z" fill="#3BC7BE" />
@@ -448,8 +457,11 @@ function CombinedMaps() {
               </defs>
             </svg>
           </div>
-          <div className='col-md-12 combined-map-div' style={{ width: '0px' }} id='div2'>
-            <svg id='combined-svg2' viewBox="0 0 1554 1023" fill="none" xmlns="http://www.w3.org/2000/svg"
+        </div>
+
+        <div className='row d-flex justify-content-center align-items-center vh-90'>
+          <div className='col-md-12 combined-map-div' style={{ display: 'flex', width: '900px' }} id='div2'>
+            <svg className='svg' id='combined-svg2' viewBox="0 0 1554 1023" fill="none" xmlns="http://www.w3.org/2000/svg"
               xlinkHref="http://www.w3.org/1999/xlink">
               <rect id="Stairs To Ground Floor" x="754.5" y="887.5" width="53" height="135" fill="#464046" stroke="black" />
               <rect id="Room 101" x="672.5" y="887.5" width="81" height="117" fill="#C4C4C4" stroke="black" />
