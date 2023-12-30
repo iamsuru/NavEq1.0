@@ -15,7 +15,27 @@ function Navigation() {
 
     const [modal, setModal] = useState(false);
     const showModal = () => setModal(!modal);
+    const closeModal= () => setModal(false);
 
+    const [modalFor, setModalFor] = useState('');
+
+    const openModalFor = (locationType) => {
+        setModalFor(locationType);
+        setModal(!modal);
+    }
+
+    let current = localStorage.getItem('current');
+    let destination = localStorage.getItem('destination')
+    if (modal === false && current !== null) {
+        setCurrentLocation(current);
+        currentLocationRef.current.value = current
+        localStorage.clear();
+    }
+    if (modal === false && destination !== null) {
+        setDestinationLocation(destination);
+        destinationLocationRef.current.value = destination
+        localStorage.clear();
+    }
 
     const gfloor = ["Room G01", "Room G02", "Room G03", "Room G04", "Room G05", "WaterFilter", "Room G06", "Girls Washroom", "Room G07", "Room G08", "Room G09", "Room G10", "Room G11", "Room G12", "Room G13", "HOD ME", "Room G15", "Room G18", "Room G19", "Room G20", "Room G21", "Room G22", "Room G23", "Room G24", "Second College", "Auditorium", "Fountain", "HOD CE", "Room G25", "Room G26", "Room G27", "Room G28", "Room G29", "HOD IT", "Room G30", "Room G31", "Room G32", "Room G33", "Room G34", "Room G35", "WaterFilter", "Boys Washroom", "Room G36", "Room G37", "Room G38", "Room G39", "Room G40", "Room G41", "Room G42"];
 
@@ -64,7 +84,8 @@ function Navigation() {
                     />
                     <i
                         className="fa-solid fa-location-dot icon ms-3"
-                        onClick={showModal}>
+                        title='Pick location from map.'
+                        onClick={() => openModalFor('current')}>
                     </i>
                     <datalist id="from">
                         <option value="Entry Exit">Enterance OR Exit of College</option>
@@ -88,7 +109,8 @@ function Navigation() {
                         onChange={function (e) { setDestinationLocation(e.target.value) }} />
                     <i
                         className="fa-solid fa-location-dot icon ms-3"
-                        onClick={showModal}>
+                        title='Pick location from map.'
+                        onClick={() => openModalFor('destination')}>
                     </i>
                     <datalist id="to">
                         <option value="Entry Exit">Enterance OR Exit of College</option>
@@ -102,7 +124,7 @@ function Navigation() {
             <Modal centered isOpen={modal} toggle={showModal} size="xl" className="fullscreen-modal">
                 <ModalHeader toggle={showModal}></ModalHeader>
                 <ModalBody>
-                    <SelectFromMap />
+                    <SelectFromMap modalFor={modalFor} closeModal={closeModal}/>
                 </ModalBody>
             </Modal>
         </div>
