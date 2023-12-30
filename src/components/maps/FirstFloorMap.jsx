@@ -11,11 +11,10 @@ function FirstFloorMap() {
 
     if (currentElement) currentElement.style.fill = "#FC100D";
 
-    if (destinationElement) {
-      if (destinationLocation === "Boys Washroom" || destinationLocation === "Girls Washroom" || destinationLocation === "WaterFilter" || destinationLocation === "Entry Exit") {
-        alert(destinationLocation)
-        document.getElementById(destinationLocation + 1).style.fill = "#4BB543";
-        document.getElementById(destinationLocation + 2).style.fill = "#4BB543";
+    if (destinationElement+"1f" || destinationElement) {
+      if (destinationLocation === "Boys Washroom" || destinationLocation === "Girls Washroom") {
+        document.getElementById(destinationLocation+"1f").style.fill = "#4BB543";
+        document.getElementById(destinationLocation+"2f").style.fill = "#4BB543";
         return;
       }
       else {
@@ -28,9 +27,8 @@ function FirstFloorMap() {
       for (let i = 0; i < path1.path.length; i++) {
         document.getElementById(path1.path[i]).style.fill = "#1668f5";
       }
-
       var i = 0;
-      setInterval(() => {
+      var interval = setInterval(() => {
         if (i === 0) {
           document.getElementById(path1.path[path1.path.length - 1]).style.fill = "#1668f5"
         }
@@ -43,7 +41,11 @@ function FirstFloorMap() {
         }
       }, 300)
     }
+    return () => {
+      clearInterval(interval);
+    }
   }, []);
+
   return (
     <div className='container map-container'>
       <div className='container svg-container'>
@@ -56,7 +58,7 @@ function FirstFloorMap() {
           <rect id="Room 105" x="272.5" y="887.5" width="160" height="116" fill="#C4C4C4" stroke="black" />
           <rect id="Room 106" x="142.5" y="887.5" width="129" height="117" fill="#C4C4C4" stroke="black" />
           <rect id="Room 107" x="63.5" y="887.5" width="78" height="117" fill="#C4C4C4" stroke="black" />
-          <rect id="Girls Washroom3f" x="1.5" y="887.5" width="61" height="117" fill="#C4C4C4" stroke="black" />
+          <rect id="Girls Washroom1f" x="1.5" y="887.5" width="61" height="117" fill="#C4C4C4" stroke="black" />
           <rect id="Room 108" x="232.5" y="666.5" width="101" height="117" fill="#C4C4C4" stroke="black" />
           <rect id="Room 109" x="232.5" y="595.5" width="101" height="70" fill="#C4C4C4" stroke="black" />
           <rect id="Room 110" x="232.5" y="449.5" width="101" height="145" fill="#C4C4C4" stroke="black" />
@@ -69,7 +71,7 @@ function FirstFloorMap() {
           <rect id="Room 109p" x="335" y="594" width="50" height="72" fill="#3BC7BE" />
           <rect id="Room 110p" x="335" y="448" width="50" height="147" fill="#3BC7BE" />
           <rect id="Room 111p" x="335" y="372" width="50" height="77" fill="#3BC7BE" />
-          <rect id="Boys Washroom4f" x="1.5" y="19.5" width="61" height="116" fill="#C4C4C4" stroke="black" />
+          <rect id="Boys Washroom1f" x="1.5" y="19.5" width="61" height="116" fill="#C4C4C4" stroke="black" />
           <rect id="Room 114" x="63.5" y="19.5" width="80" height="116" fill="#C4C4C4" stroke="black" />
           <rect id="Room 115" x="144.5" y="19.5" width="66" height="116" fill="#C4C4C4" stroke="black" />
           <rect id="Room 116" x="211.5" y="19.5" width="62" height="116" fill="#C4C4C4" stroke="black" />
@@ -107,7 +109,7 @@ function FirstFloorMap() {
           <path id="Room 134" d="M1030.5 887.5H1141.5V1004.5H1030.5V887.5Z" fill="#C4C4C4" stroke="black" />
           <path id="Room 135" d="M919.5 887.5H1029.5V1004.5H919.5V887.5Z" fill="#C4C4C4" stroke="black" />
           <path id="Room 136" d="M808.5 887.5H918.5V1004.5H808.5V887.5Z" fill="#C4C4C4" stroke="black" />
-          <rect id="Girls Washroom4f" x="1500.5" y="19.5" width="53" height="116" fill="#C4C4C4" stroke="black" />
+          <rect id="Girls Washroom2f" x="1500.5" y="19.5" width="53" height="116" fill="#C4C4C4" stroke="black" />
           <rect id="Boys Washroom4fp" x="1" y="136" width="63" height="53" fill="#3BC7BE" />
           <rect id="Room 114p" x="63" y="136" width="81" height="53" fill="#3BC7BE" />
           <rect id="Room 115p" x="143" y="136" width="68" height="53" fill="#3BC7BE" />
@@ -127,7 +129,7 @@ function FirstFloorMap() {
           <rect id="Room 126p" x="1302" y="136" width="73" height="53" fill="#3BC7BE" />
           <rect id="Room 127p" x="1374" y="136" width="125" height="53" fill="#3BC7BE" />
           <rect id="Girls Washroom4fp" x="1498" y="136" width="56" height="53" fill="#3BC7BE" />
-          <rect id="Boys Washroom3f" x="1482.5" y="887.5" width="68" height="117" fill="#C4C4C4" stroke="black" />
+          <rect id="Boys Washroom2f" x="1482.5" y="887.5" width="68" height="117" fill="#C4C4C4" stroke="black" />
           <rect id="boys 2" x="1492" y="899" width="44" height="83" fill="url(#pattern0)" />
           <rect id="boys 3" x="9" y="37" width="44" height="83" fill="url(#pattern1)" />
           <rect id="Stairs To Ground Floorp" x="753" y="838" width="55" height="49" fill="#3BC7BE" />

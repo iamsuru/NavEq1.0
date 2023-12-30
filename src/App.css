@@ -1,11 +1,15 @@
 @font-face {
   font-family: "RubikDoodleShadow-Regular";
-  src: url("/public/fonts/RubikDoodleShadow-Regular.ttf");
+  src: url("/public/fonts/RubikDoodleShadow-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "DMSerifDisplay-Regular";
-  src: url("/public/fonts/DMSerifDisplay-Regular.ttf");
+  src: url("/public/fonts/DMSerifDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Background.jsx */
