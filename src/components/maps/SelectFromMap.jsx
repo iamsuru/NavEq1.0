@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../../styles/SelectFromMap.css'
 
 function SelectFromMap(props) {
   const [showGroundFloorMap, setShowGroundFloorMap] = useState(true);

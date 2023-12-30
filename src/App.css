@@ -108,6 +108,10 @@ button[type="submit"]:hover {
   color: #008000;
 }
 
+.fullscreen-modal .modal-dialog {
+  max-width: 100%;
+}
+
 i {
   background-image: linear-gradient(to bottom, #ffc244, #cf462a);
   -webkit-background-clip: text; /*For Safari/Chrome*/
@@ -133,7 +137,7 @@ iframe {
   font-family: "DMSerifDisplay-Regular";
 }
 
-.map-container {
+/* .map-container {
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -150,9 +154,7 @@ iframe {
   align-items: center;
 }
 
-.fullscreen-modal .modal-dialog {
-  max-width: 100%;
-}
+
 
 .touch-parent-container {
   display: flex;
@@ -177,9 +179,9 @@ iframe {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-origin: center; /* Set the transform origin to center */
-    transform: rotate(90deg); /* Rotate the container by 90 degrees */
-    margin: auto; /* Center the container horizontally */
+    transform-origin: center;
+    transform: rotate(90deg);
+    margin: auto;
   }
   svg {
     width: 500px;
@@ -213,38 +215,8 @@ iframe {
 }
 
 @media (max-width: 350px) {
-  .svg-container {
-    padding: 20px;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-origin: center; /* Set the transform origin to center */
-    transform: rotate(90deg); /* Rotate the container by 90 degrees */
-    margin: auto; /* Center the container horizontally */
-  }
   svg {
-    width: 330px;
-  }
-  .touch-container {
-    padding: 20px;
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-origin: center;
-    transform: rotate(90deg);
-    margin: auto;
-  }
-  .button-container {
-    transform-origin: center;
-    transform: rotate(90deg);
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 330px !important;
   }
 
   .change-button {
@@ -255,4 +227,4 @@ iframe {
 
 .cursor-change {
   cursor: pointer;
-}
+} */

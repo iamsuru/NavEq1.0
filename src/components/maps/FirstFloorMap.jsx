@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import FindShortestPath from '../../scripts/FindShortestPath';
-
+import '../../styles/FirstFloorMap.css'
 function FirstFloorMap() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);

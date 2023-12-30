@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import FindShortestPath from '../../scripts/FindShortestPath';
+import '../../styles/GroundFloorMap.css'
 
 function GroundFloorMap() {
     useEffect(() => {

@@ -1,0 +1,39 @@
+.map-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-container {
+  padding: 20px;
+  text-align: center;
+  width: 1000px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .svg-container {
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    transform: rotate(90deg);
+    margin: auto;
+  }
+  svg {
+    width: 500px;
+  }
+}
+
+@media (max-width: 350px) {
+  svg {
+    width: 330px !important;
+  }
+}
