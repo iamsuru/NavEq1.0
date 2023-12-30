@@ -59,7 +59,7 @@ function Navigation() {
             navigate(`/first-floor-map?current=${currentLocation}&destination=${destinationLocation}`);
             return;
         } else {
-            navigate(`/combined-map?current=${currentLocation}&destination=${destinationLocation}`);
+            navigate(`/combined-maps?current=${currentLocation}&destination=${destinationLocation}`);
             return;
         }
     }

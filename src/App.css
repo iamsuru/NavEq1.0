@@ -150,6 +150,17 @@ iframe {
   align-items: center;
 }
 
+.combined-map-container {
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+  width: 900px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .fullscreen-modal .modal-dialog {
   max-width: 100%;
 }
@@ -195,6 +206,15 @@ iframe {
     transform: rotate(90deg);
     margin: auto;
   }
+  .combined-map-container {
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    transform: rotate(90deg);
+  }
 
   .button-container {
     transform-origin: center;
@@ -228,6 +248,16 @@ iframe {
     width: 330px;
   }
   .touch-container {
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    transform: rotate(90deg);
+    margin: auto;
+  }
+  .combined-map-container {
     padding: 20px;
     width: fit-content;
     display: flex;
