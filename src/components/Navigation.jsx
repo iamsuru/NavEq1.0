@@ -3,7 +3,8 @@ import Locations from '../data/Locations'
 import { useNavigate } from 'react-router-dom';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import SelectFromMap from './maps/SelectFromMap';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Navigation() {
     const navigate = useNavigate();
 
@@ -37,7 +38,7 @@ function Navigation() {
         localStorage.clear();
     }
 
-    const gfloor = ["Room G01", "Room G02", "Room G03", "Room G04", "Room G05", "WaterFilter", "Room G06", "Girls Washroom", "Room G07", "Room G08", "Room G09", "Room G10", "Room G11", "Room G12", "Room G13", "HOD ME", "Room G15", "Room G18", "Room G19", "Room G20", "Room G21", "Room G22", "Room G23", "Room G24", "Second College", "Auditorium", "Fountain", "HOD CE", "Room G25", "Room G26", "Room G27", "Room G28", "Room G29", "HOD IT", "Room G30", "Room G31", "Room G32", "Room G33", "Room G34", "Room G35", "WaterFilter", "Boys Washroom", "Room G36", "Room G37", "Room G38", "Room G39", "Room G40", "Room G41", "Room G42"];
+    const gfloor = ["Entry Exit", "Room G01", "Room G02", "Room G03", "Room G04", "Room G05", "WaterFilter", "Room G06", "Girls Washroom", "Room G07", "Room G08", "Room G09", "Room G10", "Room G11", "Room G12", "Room G13", "HOD ME", "Room G15", "Room G18", "Room G19", "Room G20", "Room G21", "Room G22", "Room G23", "Room G24", "To SRIST", "Second College", "Auditorium", "Fountain", "HOD CE", "Room G25", "Room G26", "Room G27", "Room G28", "Room G29", "HOD IT", "Room G30", "Room G31", "Room G32", "Room G33", "Room G34", "Room G35", "WaterFilter", "Boys Washroom", "Room G36", "Room G37", "Room G38", "Room G39", "Room G40", "Room G41", "Room G42"];
 
     const ffloor = ["Room 101", "Room 102", "Room 103", "Room 105b", "Room 105", "Room 105a", "To Stairs1f", "Room 106", "Room 107", "Girls Washroom", "Room 108", "Room 109", "Room 110", "Room 111", "Room 112", "Room 113", "To Stairs2f", "Room 117a", "Room 117", "Room 114", "Boys Washroom", "Room 115", "Room 116", "Room 118", "Room 119", "Room 120", "To Ground Floor", "Room 121", "Room 122", "Room 123", "Room 124", "To Stairs3f", "Room 124a", "Room 125", "Room 126", "Room 127", "HOD CS", "Room 128", "Room 129", "Room 130", "Room 131", "Room 132", "Room 132", "Room 133b", "Room 133", "Room 133a", "To Stairs4f", "Room 134", "Room 135", "Room 136", "Stairs To Ground Floor"];
 
@@ -52,19 +53,26 @@ function Navigation() {
             destinationLocationRef.current.value = '';
         }
 
+        if (currentLocation === destinationLocation) {
+            toast.info('Your are already on the destination spot !')
+            return;
+        }
+
         if (gfloor.includes(currentLocation) && gfloor.includes(destinationLocation)) {
             navigate(`/ground-floor-map?current=${currentLocation}&destination=${destinationLocation}`);
             return;
         } else if (ffloor.includes(currentLocation) && ffloor.includes(destinationLocation)) {
             navigate(`/first-floor-map?current=${currentLocation}&destination=${destinationLocation}`);
             return;
-        } else {
-            if (ffloor.includes(currentLocation) && gfloor.includes(destinationLocation)) {
-                navigate(`/combined-maps?current=${currentLocation}&destination=${destinationLocation}&div1=none`);
-                return;
-            }
+        } else if (ffloor.includes(currentLocation) && gfloor.includes(destinationLocation)) {
+            navigate(`/combined-maps?current=${currentLocation}&destination=${destinationLocation}&div1=none`);
+            return;
+        } else if (gfloor.includes(currentLocation && ffloor.includes(destinationLocation))) {
             navigate(`/combined-maps?current=${currentLocation}&destination=${destinationLocation}`);
             return;
+        } else {
+            toast.error('Location are not correct !')
+            return
         }
     }
 

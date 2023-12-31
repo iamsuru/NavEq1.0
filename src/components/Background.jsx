@@ -3,6 +3,8 @@ import Navigation from './Navigation'
 import ChatBot from './ChatBot'
 import Header from './Header'
 import Footer from './Footer'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 function Background() {
   return (
     <div className='parent-container'>
@@ -18,6 +20,15 @@ function Background() {
         </div>
       </div>
       <Footer />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        progress={undefined}
+      />
     </div>
   )
 }
