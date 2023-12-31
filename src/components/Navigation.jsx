@@ -67,7 +67,7 @@ function Navigation() {
         } else if (ffloor.includes(currentLocation) && gfloor.includes(destinationLocation)) {
             navigate(`/combined-maps?current=${currentLocation}&destination=${destinationLocation}&div1=none`);
             return;
-        } else if (gfloor.includes(currentLocation && ffloor.includes(destinationLocation))) {
+        } else if (gfloor.includes(currentLocation) && ffloor.includes(destinationLocation)) {
             navigate(`/combined-maps?current=${currentLocation}&destination=${destinationLocation}`);
             return;
         } else {
