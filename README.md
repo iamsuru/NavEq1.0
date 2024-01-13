@@ -1,3 +1,12 @@
+NavEq is an abbreviation of Navigation and Enquiry.
+
+NavEq, my minor project, is a purposeful fusion of navigation and inquiry systems tailored to address the needs of unfamiliar visitors at SRIT (my college). This innovative project aims to facilitate seamless navigation within the college premises, catering to users who may be unfamiliar with the layout. By utilizing current and destination location information, NavEq assists users in efficiently navigating through the campus, ensuring a hassle-free experience.
+
+Moreover, NavEq extends its functionality to incorporate an Inquiry System, featuring a responsive bot capable of providing answers to specific queries. This component of the project serves as a valuable resource for users seeking information within the college ecosystem. Whether it's about academic services, facilities, or any other pertinent details, the Enquiry System within NavEq acts as an intelligent assistant, enhancing user engagement and satisfaction.
+
+In summary, NavEq stands out as a multifaceted solution, blending navigation assistance with an inquiry system, to enhance the overall experience of visitors within the SRIT campus.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
